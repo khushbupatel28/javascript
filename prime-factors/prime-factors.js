@@ -7,8 +7,22 @@ var primeFactors = function(){
 		if(input === 1){
 			return [];
 		}
-
-		for(var )
+        
+        var i = 2;
+		for(i=2 ; i<=input i++){
+			if(input % 2 === 0){
+            for(j=2; j <= (i/2); j++){
+            	if( i% j === 0){
+            		isprime = false;
+            	}else{
+            		isprime = true;
+            	}
+            }
+            if(isprime === true){
+                input /= i;
+                return primeArray[i];
+            }
+        }
 
     
 
