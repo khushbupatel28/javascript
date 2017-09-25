@@ -1,11 +1,14 @@
-var Matrix = function(input){
-    this.rows = function(){
-        var row = [];
-        for(var i=0; i<input.length; i++){
-  	        row.push(input[row][i]);
-        }
-        return row;
-    };
+var Matrix = function(inputMatrix){
+    
+    this.rows = inputMatrix.split('\n').map(function(rowelement){
+        return rowelement.split(' ').map(function(rowelement){
+            return parseInt(rowelement);
+        });    
+    });
+
+    this.columns = Object.keys(this.rows).map(function(col){                 // keys used to return the properties of the object 
+    	return this.map(function(rowelement){return rowelement[col]}); 
+    }, this.rows);
 };
 
 module.exports = Matrix;
